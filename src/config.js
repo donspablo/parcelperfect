@@ -12,4 +12,4 @@ const fetchConfig = () => {
     return config;
 }
 
-module.exports = { loadConfig, fetchConfig };
+module.exports = {loadConfig, fetchConfig};

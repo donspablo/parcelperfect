@@ -1,26 +1,26 @@
 const express = require("express");
 const cors = require("cors");
 
-const { authenticateAsync } = require("./src/authentication");
-const { getPlacesByPostcodeAsync } = require("./src/places");
-const { requestQuote, updateService, quoteToCollection } = require("./src/quotes");
-const { loadConfig } = require("./src/config");
+const {authenticateAsync} = require("./src/authentication");
+const {getPlacesByPostcodeAsync} = require("./src/places");
+const {requestQuote, updateService, quoteToCollection} = require("./src/quotes");
+const {loadConfig} = require("./src/config");
 
 const app = express();
 
-app.use(cors({ origin: true }));
+app.use(cors({origin: true}));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 
 loadConfig(process.env.parcelperfect_url);
 const username = process.env.parcelperfect_username;
 const password = process.env.parcelperfect_password;
 
 /**
- * 
- * @param {*} postcode 
- * @param {*} city 
- * @param {*} token 
+ *
+ * @param {*} postcode
+ * @param {*} city
+ * @param {*} token
  * @returns { message: string, places: array, postcode: string, city: string }
  */
 const determinePlaceAsync = async (postcode, city, token) => {
@@ -32,9 +32,8 @@ const determinePlaceAsync = async (postcode, city, token) => {
 
         if (filteredPlaces.length > 0) {
             return filteredPlaces[0];
-        }
-        else {
-            return { message: "No place has been found", places: places, postcode: postcode, city: city };
+        } else {
+            return {message: "No place has been found", places: places, postcode: postcode, city: city};
         }
     } else {
         throw Error;

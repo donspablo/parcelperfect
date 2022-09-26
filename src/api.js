@@ -1,11 +1,11 @@
 const axios = require("axios").default;
-const { fetchConfig } = require("./config");
+const {fetchConfig} = require("./config");
 /**
  * Makes API request to ParcelPerfect's REST API. Authentication variables need to be set in .env file.
- * @param {*} className 
- * @param {*} method 
- * @param {*} params 
- * @param {*} token 
+ * @param {*} className
+ * @param {*} method
+ * @param {*} params
+ * @param {*} token
  */
 const callAsync = async (className, method, params, token = null) => {
     const url = fetchConfig().url;
@@ -19,4 +19,4 @@ const callAsync = async (className, method, params, token = null) => {
     return response.data;
 };
 
-module.exports = { callAsync };
+module.exports = {callAsync};

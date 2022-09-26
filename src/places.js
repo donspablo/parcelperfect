@@ -1,4 +1,4 @@
-const { callAsync } = require("./api");
+const {callAsync} = require("./api");
 
 const getPlacesByPostcodeAsync = async (postcode, token) => {
     const params = {
@@ -20,4 +20,4 @@ const getPlacesByNameAsync = async (name, token) => {
     return response;
 };
 
-module.exports = { getPlacesByPostcodeAsync, getPlacesByNameAsync };
+module.exports = {getPlacesByPostcodeAsync, getPlacesByNameAsync};

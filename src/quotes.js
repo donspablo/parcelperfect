@@ -1,4 +1,4 @@
-const { callAsync } = require("./api")
+const {callAsync} = require("./api")
 
 const requestQuote = async (quote, token) => {
     const response = await callAsync("Quote", "requestQuote", quote, token);
@@ -24,4 +24,4 @@ const quoteToCollection = async (quoteno, token) => {
     return response;
 }
 
-module.exports = { requestQuote, updateService, quoteToCollection };
+module.exports = {requestQuote, updateService, quoteToCollection};

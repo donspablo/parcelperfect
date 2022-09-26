@@ -1,5 +1,5 @@
 const md5 = require('md5');
-const { callAsync } = require('./api');
+const {callAsync} = require('./api');
 
 const authenticateAsync = async (username, password) => {
     const saltParams = {
@@ -25,4 +25,4 @@ const authenticateAsync = async (username, password) => {
     }
 };
 
-module.exports = { authenticateAsync };
+module.exports = {authenticateAsync};
